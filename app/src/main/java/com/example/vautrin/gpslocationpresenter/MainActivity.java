@@ -44,16 +44,25 @@ public class MainActivity extends AppCompatActivity {
         cursor.moveToFirst();
         while(cursor.moveToNext()){
             String body=cursor.getString(cursor.getColumnIndexOrThrow("body"));
-            sms.add(body);
+            body = body.replaceAll("\\r|\\n", "");
+            if(body.contains("lat:")){
+                int indexOfLatitude = body.indexOf("lat:")+4;
+                int indexOfLongitude = body.indexOf("lon:")+4;
+                String latitude = body.substring(indexOfLatitude,indexOfLatitude+9);
+                String longitude = body.substring(indexOfLongitude,indexOfLongitude+9);
+                sms.add(latitude+"L"+longitude);
+            }
         }
         return sms;
     }
 
     public void onGoToMapClick(View view){
         TextView textView = (TextView) (findViewById(R.id.lblWelcome));
-        textView.setText("Welcome");
+        EditText inputPhone = (EditText) findViewById(R.id.inputPhone);
+        String number = inputPhone.getText().toString();
 
         Intent intent = new Intent(this, MapsActivity.class);
+        intent.putStringArrayListExtra("listView",fetchInbox(number));
         startActivity(intent);
     }
 }
