@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_config"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.example.vautrin.gpslocationpresenter.ConfigActivity">
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="phone"
+        android:ems="10"
+        android:id="@+id/edtPhone"
+        android:layout_alignBaseline="@+id/lblPhone"
+        android:layout_alignBottom="@+id/lblPhone"
+        android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/edtNewPassword"
+        android:layout_alignBaseline="@+id/lblNewPassword"
+        android:layout_alignBottom="@+id/lblNewPassword"
+        android:layout_alignStart="@+id/edtPhone" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/edtNewPasswordConfirm"
+        android:layout_below="@+id/edtNewPassword"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:text="Phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblPhone"
+        android:layout_toLeftOf="@+id/edtPhone"/>
+    <TextView
+        android:text="New Password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblNewPassword"
+        android:layout_below="@+id/lblPhone"
+        android:layout_toLeftOf="@+id/edtNewPassword"/>
+    <TextView
+        android:text="Confirm Password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/lblNewPasswordConfirm"
+        android:layout_below="@+id/lblNewPassword"
+        android:layout_toLeftOf="@+id/edtNewPasswordConfirm"/>
+
+
+
+
+</RelativeLayout>
